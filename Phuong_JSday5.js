@@ -111,6 +111,32 @@ function rotate (matrix) {
 var matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 console.log(rotate(matrix))
 
+// Hotel Bookings Possible
+function booking (arrival, departure, k) {
+  var i = 1
+  var count = 0
+  var j = 0;
+  while (i < arrival.length) {
+    if (arrival[i] < departure[j]) {
+      count++;
+    }
+    else{
+      j++;
+    }
+    i++;
+  }
+  if (count >= k) {
+    return false
+  }
+  else{
+    return true
+  }
+}
+var Arrivals = [1, 3, 5];
+var Departures = [2, 6, 8]
+var k = 1;
+console.log(booking(Arrivals, Departures, k));
+
 // Set Matrix Zeros
 function setZeroes (matrix) {
   for (let i = 0; i < matrix.length; i++) {
