@@ -52,6 +52,19 @@ console.log(ex2);
     //ex4 - map cont
 
 // Implement map
+function map2(arr, transform) {
+    let result = [];
+    for (i of arr) {
+        result.push(transform(i));
+    }
+    return result;
+}
+function transform(t){
+    return `${t.first_name} ${t.last_name}`;
+    
+};
+console.log("Implement map" + map2(users, transform));
+
 // Implement filter
 // function impFilter(arr) {
 //     var res=[];
