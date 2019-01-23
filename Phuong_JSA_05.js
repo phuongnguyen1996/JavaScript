@@ -78,7 +78,7 @@ function matrixMedian (matrix) {
   }
 }
 
-var matrix = [[1, 2, 5], [1, 5, 8], [5, 6, 9]]
+var matrix = [[1, 1,1], [1, 1, 8], [1, 6, 9]]
 
 console.log(matrixMedian(matrix))
 // 1 1 2 2 3 4 6 8 9
