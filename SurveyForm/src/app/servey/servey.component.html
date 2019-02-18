@@ -1,0 +1,155 @@
+<h1 class="title">Survey Form</h1>
+<form (submit)="onSubmit(surveyform)" #surveyform="ngForm">
+  <h3 class="title">Let us know how we can improve freeCodeCamp</h3>
+  <!-- name -->
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">*Name:</label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter your name"
+        required
+        name="name"
+        ngModel
+      />
+      <!-- <p
+        *ngIf="surveyform.controls.user.valid === false"
+        class="alert alert-danger"
+      >
+        Invalid
+      </p> -->
+    </div>
+  </div>
+  <!-- email -->
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">*Email:</label>
+    <div class="col-sm-9">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter your Email"
+        required
+        name="email"
+        ngModel
+      />
+    </div>
+  </div>
+  <!-- age -->
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">*Age:</label>
+    <div class="col-sm-9">
+      <input
+        type="number"
+        min="1"
+        class="form-control"
+        placeholder="Age"
+        required
+        name="age"
+        ngModel
+      />
+    </div>
+  </div>
+  <!-- role -->
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label"
+      >Which option best describes your current role?</label
+    >
+    <div class="col-sm-9">
+      <select class="form-control" required name="role" ngModel>
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+  </div>
+  <!-- friend -->
+  <div class="form-group">
+    <div class="row">
+      <label class="col-form-label col-sm-3 pt-0"
+        >*How likely is that you would recommend freeCodeCamp to a
+        friend?</label
+      >
+      <div class="col-sm-9">
+        <div class="form-check">
+          <label
+            *ngFor="let ra of recommends"
+            class="col-form-label col-sm-3 pt-0"
+          >
+            <input type="radio" ngModel name="recommend" [value]="ra" />
+            {{ ra }}
+            <!-- <p *ngIf="surveyform.controls.recommend.valid===true">{{ra}}</p> -->
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- like -->
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">What do you like most in FCC:</label>
+    <div class="col-sm-9">
+      <select class="form-control" required name="favorite" ngModel>
+        <option *ngFor="let fa of likes" [value]="fa">{{ fa }}</option>
+      </select>
+    </div>
+  </div>
+  <!-- check -->
+  <div class="form-group row">
+    <div class="col-sm-3">
+      Things that should be improved in the future (Check all that apply):
+    </div>
+    <div class="col-sm-9" ngModelGroup="checkbox">
+      <div class="form-check" *ngFor="let ch of checks">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="ch"
+          ngModel
+        />
+        <label class="form-check-label">
+          {{ ch }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- comment -->
+  <div class="form-group">
+    <label class="col-sm-3 col-form-label">Any Comments or Suggestions?</label>
+    <textarea
+      name="comment"
+      rows="3"
+      class="form-control"
+      placeholder="Enter your comment here ..."
+      ngModel
+    ></textarea>
+  </div>
+  <!-- submit -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-- <div>
+  <p>
+    Data: <i>{{ surveyform.value | json }}</i>
+  </p>
+  <p>
+    Name: <i>{{ surveyform.controls.email?.value }}</i>
+  </p>
+  <p>
+    Email: <i>{{ surveyform.controls.email?.value }}</i>
+  </p>
+  <p>
+    Age: <i>{{ surveyform.controls.age?.value }}</i>
+  </p>
+  <p>
+    Role: <i>{{ surveyform.controls.role.value }}</i>
+  </p>
+  <p>
+    Recommend: <i>{{ surveyform.controls.recommend.value }}</i>
+  </p>
+  <p>
+    Like: <i>{{ surveyform.controls.favorite?.value }}</i>
+  </p>
+  <p>
+    Check: <i>{{ surveyform.controls.check?.value }}</i>
+  </p>
+  <p>
+    Comments: <i>{{ surveyform.controls.comment?.value }}</i>
+  </p>
+</div> -->
