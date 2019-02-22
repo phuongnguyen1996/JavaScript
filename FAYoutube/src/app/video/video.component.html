@@ -1,0 +1,21 @@
+<div class="video" style="width: 100%;">
+    <div class="sort">
+      <i class="material-icons">sort</i>
+    </div>
+    <div class="card mb-3" >
+      <div class="row" *ngFor="let v of data?.items | paginate: { itemsPerPage: 10, currentPage: p }" [routerLink]="v.id.videoId">
+        <div class="col-md-3">
+          <img [src]="v.snippet.thumbnails.default.url" class="card-img" [alt]="v.snippet.title" />
+        </div>
+        <div class="col-md-9">
+          <div class="card-body" >
+            <h5 class="card-title">{{v.snippet.title}}</h5>
+            <p>Description: {{v.snippet.description}}</p>
+            <p>Published Date: {{v.snippet.publishedAt | date: 'dd/MM/yyyy'}}</p>
+            <p>Channel Title: {{v.snippet.channelTitle}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls> 

@@ -1,0 +1,15 @@
+<div class="detail" *ngFor="let v of dataD">   
+  <iframe width="600"
+  height="315"
+  style="margin-left:200px;" [src]="sanitizer.bypassSecurityTrustResourceUrl(urlVideo)">
+  </iframe>
+  <p><strong>Title:</strong> {{v.snippet.title}}</p>
+  <p><strong>Description:</strong> {{v.snippet.description}}</p>
+  <p><strong>Channel Title:</strong> {{v.snippet.channelTitle}}</p>
+  <p><strong>Duration:</strong> {{v.contentDetails.duration}}</p>
+  <p><strong>View Count:</strong> {{v.statistics.viewCount}}</p>
+  <p><strong>Like Count:</strong> {{v.statistics.likeCount}}</p>
+  <p><strong>Dislike Count:</strong> {{v.statistics.dislikeCount}}</p>
+  <p><strong>Favorite Count:</strong> {{v.statistics.favoriteCount}}</p>
+  <p><strong>Comment Count:</strong> {{v.statistics.commentCount}}</p>
+</div>
