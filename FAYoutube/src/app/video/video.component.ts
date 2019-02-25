@@ -1,11 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { DataService } from "../data.service";
-
-export interface videos {
-  video: {
-    
-  };
-}
 
 @Component({
   selector: "app-video",

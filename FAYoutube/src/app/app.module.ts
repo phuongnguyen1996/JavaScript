@@ -7,9 +7,9 @@ import { AppComponent } from "./app.component";
 import { InputFieldComponent } from "./input-field/input-field.component";
 import { VideoComponent } from "./video/video.component";
 import { DetailComponent } from "./detail/detail.component";
-import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { HttpClientModule } from "@angular/common/http";
+import { DataService } from "./data.service";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
     VideoComponent,
     DetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,NgxPaginationModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
